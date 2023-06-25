@@ -1,0 +1,19 @@
+Arithmetic
+    Integer Operation
+    ----------------------------
+        ADD         Rd,R1,R2    ;   Rd <- R1  +  R2
+        ADDI        Rd,R1,IMM   ;   Rd <- R1  +  IMM
+        SUB         Rd,R1,R2    ;   Rd <- R1  -  R2
+        SUBI        Rd,R1,IMM   ;   Rd <- R1  -  IMM
+        SRA         Rd,R1,IMM   ;   Rd <- R1 >>  IMM
+        SRL         Rd,R1,IMM   ;   Rd <- R1 >>> IMM
+        SLA         Rd,R1,IMM   ;   Rd <- R1 <<  IMM
+        SLL         Rd,R1,IMM   ;   Rd <- R1 <<< IMM
+    Pseudo fcv
+
+
+
+
+
+    Floating Point Operations
+    ----------------------------
