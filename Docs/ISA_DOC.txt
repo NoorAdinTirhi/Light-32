@@ -1,0 +1,33 @@
+Arithmetic
+----------------------------
+    Integer Instructions
+    ----------------------------
+        ADD         Rd,R1,R2    ;   Rd <- R1  +  R2
+        ADDI        Rd,R1,IMM   ;   Rd <- R1  +  IMM
+        SUB         Rd,R1,R2    ;   Rd <- R1  -  R2
+        SUBI        Rd,R1,IMM   ;   Rd <- R1  -  IMM
+        SRA         Rd,R1,IMM   ;   Rd <- R1 >>  IMM
+        SLA         Rd,R1,IMM   ;   Rd <- R1 <<  IMM
+        MUL         Rd,R1,R2    ;   Rd  <- R1  *  R2
+        MULI        Rd,R1,R2    ;   Rd <- R1  *  R2
+    Pseudo Instructions
+    ----------------------------
+        LI          Rd,IMM      ;   Rd <= IMM
+            |-->    ADDI        Rd,Z,IMM
+        
+
+    Floating Point Operations
+    ----------------------------
+        ADDF        Rd,R1,R2    ;   Rd <- R1  +  R2
+        SUBF        Rd,R1,R2    ;   Rd <- R1  -  R2
+        MULF        Rd,R1,R2    ;   Rd <- R1  *  R2
+
+Logic
+----------------------------
+    AND         Rd,R1,R2    ;   Rd <- R1  &  R2     (BitWise)
+    ANDI        Rd,R1,IMM   ;   Rd <- R1  &  IMM    (BitWise)
+    OR          Rd,R1,R2    ;   Rd <- R1  |  R2     (BitWise)
+    ORI         Rd,R1,IMM   ;   Rd <- R1  |  IMM    (BitWise)
+    SRL         Rd,R1,IMM   ;   Rd <- R1 >>> IMM
+    SLL         Rd,R1,IMM   ;   Rd <- R1 <<< IMM
+
