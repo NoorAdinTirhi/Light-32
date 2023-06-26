@@ -1,6 +1,6 @@
 Arithmetic
 ----------------------------
-    Integer Instructions
+    Integer Operations
     ----------------------------
         ADD         Rd,R1,R2    ;   Rd <- R1  +  R2
         ADDI        Rd,R1,IMM   ;   Rd <- R1  +  IMM
@@ -10,9 +10,9 @@ Arithmetic
         SLA         Rd,R1,IMM   ;   Rd <- R1 <<  IMM
         MUL         Rd,R1,R2    ;   Rd  <- R1  *  R2
         MULI        Rd,R1,R2    ;   Rd <- R1  *  R2
-    Pseudo Instructions
+    Pseudo Operations
     ----------------------------
-        LI          Rd,IMM      ;   Rd <= IMM
+        LI          Rd,IMM
             |-->    ADDI        Rd,Z,IMM
         
 
@@ -30,4 +30,37 @@ Logic
     ORI         Rd,R1,IMM   ;   Rd <- R1  |  IMM    (BitWise)
     SRL         Rd,R1,IMM   ;   Rd <- R1 >>> IMM
     SLL         Rd,R1,IMM   ;   Rd <- R1 <<< IMM
+    
 
+Control
+----------------------------
+    Branch Instructions
+    ----------------------------
+        BEQ         R1,R2,IMM   ;   (R1 == R2)?PC <- PC + IMM
+        BNE         R1,R2,IMM   ;   (R1 != R2)?PC <- PC + IMM    
+        BGT         R1,R2,IMM   ;   (R1 >  R2)?PC <- PC + IMM
+        BLT         R1,R2,IMM   ;   (R1 <  R2)?PC <- PC + IMM
+
+    Pseudo Operations
+    ----------------------------
+        B           IMM
+            |-->    BEQ         Z,Z,IMM
+
+    Jump Instructions
+    ----------------------------
+        JALR        R1,IMM      ;   R1 <- PC + 4
+                                    PC <- IMM
+        J           IMM         ;   PC <- IMM
+        JR          R1          ;   PC <- R1
+
+     Pseudo Operations
+    ----------------------------
+            RET
+                |-->    JR          RA
+            
+            JAL        IMM
+                |-->    JALR        RA,IMM  
+
+Load/Store
+---------------------------- 
+    L             
