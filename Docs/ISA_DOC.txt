@@ -1,57 +1,57 @@
-Arithmetic
+1-    Arithmetic
 ----------------------------
-    Integer Operations
+    1-    Integer Operations
     ----------------------------
-        ADD         Rd,R1,R2    ;   Rd <- R1  +  R2
-        ADDI        Rd,R1,IMM   ;   Rd <- R1  +  IMM
-        SUB         Rd,R1,R2    ;   Rd <- R1  -  R2
-        SUBI        Rd,R1,IMM   ;   Rd <- R1  -  IMM
-        SRA         Rd,R1,IMM   ;   Rd <- R1 >>  IMM
-        SLA         Rd,R1,IMM   ;   Rd <- R1 <<  IMM
-        MUL         Rd,R1,R2    ;   Rd  <- R1  *  R2
-        MULI        Rd,R1,R2    ;   Rd <- R1  *  R2
+        1-    ADD         Rd,R1,R2    ;   Rd <- R1  +  R2
+        2-    ADDI        Rd,R1,IMM   ;   Rd <- R1  +  IMM
+        3-    SUB         Rd,R1,R2    ;   Rd <- R1  -  R2
+        4-    SUBI        Rd,R1,IMM   ;   Rd <- R1  -  IMM
+        5-    SRA         Rd,R1,IMM   ;   Rd <- R1 >>  IMM
+        6-    SLA         Rd,R1,IMM   ;   Rd <- R1 <<  IMM
+        7-    MUL         Rd,R1,R2    ;   Rd  <- R1  *  R2
+        8-    MULI        Rd,R1,R2    ;   Rd <- R1  *  R2
     Pseudo Operations
     ----------------------------
         LI          Rd,IMM
             |-->    ADDI        Rd,Z,IMM
         
 
-    Floating Point Operations
+    2-    Floating Point Operations
     ----------------------------
-        ADDF        Rd,R1,R2    ;   Rd <- R1  +  R2
-        SUBF        Rd,R1,R2    ;   Rd <- R1  -  R2
-        MULF        Rd,R1,R2    ;   Rd <- R1  *  R2
+        9-    ADDF        Rd,R1,R2    ;   Rd <- R1  +  R2
+        10-   SUBF        Rd,R1,R2    ;   Rd <- R1  -  R2
+        11-   MULF        Rd,R1,R2    ;   Rd <- R1  *  R2
 
-Logic
+2-    Logic
 ----------------------------
-    AND         Rd,R1,R2    ;   Rd <- R1  &  R2     (BitWise)
-    ANDI        Rd,R1,IMM   ;   Rd <- R1  &  IMM    (BitWise)
-    OR          Rd,R1,R2    ;   Rd <- R1  |  R2     (BitWise)
-    ORI         Rd,R1,IMM   ;   Rd <- R1  |  IMM    (BitWise)
-    SRL         Rd,R1,IMM   ;   Rd <- R1 >>> IMM
-    SLL         Rd,R1,IMM   ;   Rd <- R1 <<< IMM
+    1-    AND         Rd,R1,R2    ;   Rd <- R1  &  R2     (BitWise)
+    2-    ANDI        Rd,R1,IMM   ;   Rd <- R1  &  IMM    (BitWise)
+    3-    OR          Rd,R1,R2    ;   Rd <- R1  |  R2     (BitWise)
+    4-    ORI         Rd,R1,IMM   ;   Rd <- R1  |  IMM    (BitWise)
+    5-    SRL         Rd,R1,IMM   ;   Rd <- R1 >>> IMM
+    6-    SLL         Rd,R1,IMM   ;   Rd <- R1 <<< IMM
     
 
-Control
+3-    Control
 ----------------------------
-    Branch Instructions
+    1-    Branch Instructions
     ----------------------------
-        BEQ         R1,R2,IMM   ;   (R1 == R2)?PC <- PC + IMM
-        BNE         R1,R2,IMM   ;   (R1 != R2)?PC <- PC + IMM    
-        BGT         R1,R2,IMM   ;   (R1 >  R2)?PC <- PC + IMM
-        BLT         R1,R2,IMM   ;   (R1 <  R2)?PC <- PC + IMM
+        1-    BEQ         R1,R2,IMM   ;   (R1 == R2)?PC <- PC + IMM
+        2-    BNE         R1,R2,IMM   ;   (R1 != R2)?PC <- PC + IMM    
+        3-    BGT         R1,R2,IMM   ;   (R1 >  R2)?PC <- PC + IMM
+        4-    BLT         R1,R2,IMM   ;   (R1 <  R2)?PC <- PC + IMM
 
     Pseudo Operations
     ----------------------------
         B           IMM
             |-->    BEQ         Z,Z,IMM
 
-    Jump Instructions
+    2-    Jump Instructions
     ----------------------------
-        JALR        R1,IMM      ;   R1 <- PC + 4
+        1-    JALR        R1,IMM      ;   R1 <- PC + 4
                                     PC <- IMM
-        J           IMM         ;   PC <- IMM
-        JR          R1          ;   PC <- R1
+        2-    J           IMM         ;   PC <- IMM
+        3-    JR          R1          ;   PC <- R1
 
      Pseudo Operations
     ----------------------------
@@ -61,6 +61,13 @@ Control
             JAL        IMM
                 |-->    JALR        RA,IMM  
 
-Load/Store
+4-    Load/Store
 ---------------------------- 
-    L             
+    1-    Integer Operations
+    ----------------------------
+        1-    L         Rd,Rs    ;    Rd <- [Rs]
+        2-    S         Rd,Rs    ;    [Rs] <- Rd
+    2-    Float Operations
+    ----------------------------
+        1-    LF         Rd,Rs    ;    Rd <- [Rs]
+        2-    SF         Rd,Rs    ;    [Rs] <- Rd
