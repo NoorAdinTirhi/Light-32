@@ -1,0 +1,2 @@
+`define EEPROM_ADDR 32'h00000000
+`define WORD_SIZE 32
